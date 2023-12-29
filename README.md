@@ -1,8 +1,23 @@
-### CIS 1200 Homework 9: Build Your Own Game (Minesweeper)
+### Minesweeper (CIS 1200)
 
-## Homework Instructions
+## Overview:
 
-- [Homework Description](http://www.cis.upenn.edu/~cis120/current/hw/hw09)
+  The GameBoard class instantiates a Minesweeper object, which is the model
+  for the game. As the user clicks the game board, the model is updated via
+  mouse and key listeners. Whenever the model is updated, the game board
+  repaints itself to reflect the user's actions and updates its status JLabel
+  to reflect the current state of the game.
+
+  The Minesweeper class is a model of the game, completely independent of
+  the view and controller. The class provides methods to update the game
+  state, including resetting the board, generating mines and numbered plots,
+  uncovering and flagging plots, and even undo-ing moves.
+
+  The RunMinesweeper class sets up the top-level frame and widgets for the
+  GUI. The main frame contains the minesweeper board in the center, and a
+  tool bar with "Reset" and "Undo" buttons at the top. The bottom also has
+  a status panel that updates as the game progresses. Additionally, there is
+  a second text panel that contains instructions for the game.
 
 ## Core Concepts:
 
@@ -34,22 +49,3 @@
   I implemented distinct JUnit tests for an encapsulated minesweeper
   model. The tests do not rely on any graphical components and test
   unique calls of functions in the Minesweeper class.
-
-## Overview:
-
-  The GameBoard class instantiates a Minesweeper object, which is the model
-  for the game. As the user clicks the game board, the model is updated via
-  mouse and key listeners. Whenever the model is updated, the game board
-  repaints itself to reflect the user's actions and updates its status JLabel
-  to reflect the current state of the game.
-
-  The Minesweeper class is a model of the game, completely independent of
-  the view and controller. The class provides methods to update the game
-  state, including resetting the board, generating mines and numbered plots,
-  uncovering and flagging plots, and even undo-ing moves.
-
-  The RunMinesweeper class sets up the top-level frame and widgets for the
-  GUI. The main frame contains the minesweeper board in the center, and a
-  tool bar with "Reset" and "Undo" buttons at the top. The bottom also has
-  a status panel that updates as the game progresses. Additionally, there is
-  a second text panel that contains instructions for the game.
