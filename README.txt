@@ -1,6 +1,5 @@
 =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
 CIS 1200 Game Project README
-PennKey: 55338115
 =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
 
 ===================
@@ -39,14 +38,6 @@ PennKey: 55338115
   I implemented distinct JUnit tests for an encapsulated minesweeper
   model. The tests do not rely on any graphical components and test
   unique calls of functions in the Minesweeper class.
-
-===============================
-=: File Structure Screenshot :=
-===============================
-- Include a screenshot of your project's file structure. This should include
-  all of the files in your project, and the folders they are in. You can
-  upload this screenshot in your homework submission to gradescope, named 
-  "file_structure.png".
 
 =========================
 =: Your Implementation :=
@@ -91,12 +82,3 @@ PennKey: 55338115
   functions that allow modification of the internal state, but are only used in
   the JUnit tests. I would try to modify this so that the game state is completely
   encapsulated.
-
-========================
-=: External Resources :=
-========================
-
-- Cite any external resources (images, tutorials, etc.) that you may have used 
-  while implementing your game.
-
-  N/A
