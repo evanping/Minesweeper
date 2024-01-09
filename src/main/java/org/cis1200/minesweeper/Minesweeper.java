@@ -73,14 +73,14 @@ public class Minesweeper {
             gameActive = false;
         // base case: currTile != 0
         } else if (currTile == 0) { // DFS and uncover other 0 numbered tiles
-            playTurn(r - 1, c - 1, false); // top left
-            playTurn(r - 1, c, false); // top center
-            playTurn(r - 1, c + 1, false); // top right
-            playTurn(r, c + 1, false); // right center
-            playTurn(r + 1, c + 1, false); // bottom right
-            playTurn(r + 1, c, false); // bottom center
-            playTurn(r + 1, c - 1, false); // bottom left
-            playTurn(r, c - 1, false); // left center
+            for (int i = -1; i <= 1; i++) {
+                for (int j = -1; j <= 1; j++) {
+                    if (i != 0 || j != 0) {
+                        playTurn(r + i, c + j, false);
+                    }
+
+                }
+            }
         }
 
         if (checkWinner()) {
@@ -170,8 +170,6 @@ public class Minesweeper {
         gameActive = true;
         boardStack = new Stack<>();
         firstTurn = true;
-        //generateMines();
-        //populateBoard();
     }
 
     /**
@@ -233,55 +231,16 @@ public class Minesweeper {
      */
     public int countSurroundingMines(int r, int c) {
         int count = 0;
-        // top left
-        try {
-            if (board[r - 1][c - 1] == -1) {
-                count++;
+        for (int i = r - 1; i <= r + 1; i++) {
+            for (int j = c - 1; j <= c + 1; j++) {
+                if (i < 0 || i >= board.length || j < 0 || j >= board[0].length) {
+                    continue;
+                }
+                if (board[i][j] == -1) {
+                    count++;
+                }
             }
-        } catch (Exception ignore) { }
-        // top center
-        try {
-            if (board[r - 1][c] == -1) {
-                count++;
-            }
-        } catch (Exception ignore) { }
-        // top right
-        try {
-            if (board[r - 1][c + 1] == -1) {
-                count++;
-            }
-        } catch (Exception ignore) { }
-        // right center
-        try {
-            if (board[r][c + 1] == -1) {
-                count++;
-            }
-        } catch (Exception ignore) { }
-        // bottom right
-        try {
-            if (board[r + 1][c + 1] == -1) {
-                count++;
-            }
-        } catch (Exception ignore) { }
-        // bottom center
-        try {
-            if (board[r + 1][c] == -1) {
-                count++;
-            }
-        } catch (Exception ignore) { }
-        // bottom left
-        try {
-            if (board[r + 1][c - 1] == -1) {
-                count++;
-            }
-        } catch (Exception ignore) { }
-        // left center
-        try {
-            if (board[r][c - 1] == -1) {
-                count++;
-            }
-        } catch (Exception ignore) { }
-
+        }
         return count;
     }
 
@@ -296,7 +255,6 @@ public class Minesweeper {
      *         game board. 0 = empty, -1 = mine, -2 = non-visible
      */
     public int getCell(int r, int c) {
-        //return board[r][c];
         return visibleBoard[r][c];
     }
 
