@@ -8,9 +8,6 @@ public class Game {
      * class of your choosing and runs it.
      */
     public static void main(String[] args) {
-        // Set the game you want to run here
-        //Runnable game = new org.cis1200.mushroom.RunMushroomOfDoom();
-        //Runnable game = new org.cis1200.tictactoe.RunTicTacToe();
         Runnable game = new org.cis1200.minesweeper.RunMinesweeper();
 
         SwingUtilities.invokeLater(game);
